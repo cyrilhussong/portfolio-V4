@@ -14,7 +14,7 @@
             <router-link to="/propos">À Propos</router-link>
         </nav>
   <nav class="titre-header">
-    <h1>Cyril Hussong</h1>
+    <h1><RouterLink to="/">Cyril Hussong</RouterLink></h1>
   </nav>
       
       

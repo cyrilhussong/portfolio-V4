@@ -9,11 +9,12 @@
         <li><router-link to="/projet">Projet</router-link></li>
         <li><router-link to="/propos">À propos</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
-        <li><a href="https://github.com/ton-CyrilHussong/ton-repository" target="_blank" class="btn">GitHub</a></li>
+        <li><a href="https://github.com/cyrilhussong/" target="_blank" class="btn">GitHub</a></li>
       </ul>
     </nav>
     <div class="cta">
-      <router-link to="/projet" class="btn">📄 Mon CV</router-link>
+      <!-- <router-link to="/projet" class="btn">📄 Mon CV</router-link> -->
+      <a href="./Maquettes-Figma.pdf" class="btn" target="_blank">📄 Mon CV</a>
     </div>
   </header>
 </template>
