@@ -1,7 +1,10 @@
 <template>
   <header class="header">
     <div class="logo">
-      <router-link to="/">Cyril Dev</router-link>
+      <!-- Ajouter un click handler pour rediriger vers le haut -->
+      <router-link to="" @click.native="scrollToTop">
+        <img class="topscroll" src="/top.jpeg" alt="">
+      </router-link>
     </div>
     <nav>
       <ul>
@@ -12,14 +15,36 @@
         <li><a href="https://github.com/cyrilhussong/" target="_blank" class="btn">GitHub</a></li>
       </ul>
     </nav>
+    <p>modification 2025/02/19</p>
     <div class="cta">
-      <!-- <router-link to="/projet" class="btn">📄 Mon CV</router-link> -->
       <a href="./Maquettes-Figma.pdf" class="btn" target="_blank">📄 Mon CV</a>
     </div>
   </header>
 </template>
 
+<script>
+export default {
+  methods: {
+    // Méthode pour faire défiler la page jusqu'en haut
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+</script>
+
 <style scoped>
+p{
+ display: flex;
+position: absolute;
+ right: 15%;
+ font-size: 18px;
+ font-weight: bold;
+}
+.topscroll{
+  width: 100px;
+  border-radius: 50%;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -46,10 +71,12 @@ nav a {
   text-decoration: none;
   color: white;
   font-size: 18px;
+  font-weight: bold;
 }
 
 nav a:hover {
   color: #f39c12;
+  
 }
 
 .btn {

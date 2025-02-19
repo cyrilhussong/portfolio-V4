@@ -32,10 +32,18 @@
 
 
 
+.titre-header a  {
+    text-decoration: none; 
+    color: hwb(189 4% 4%);
+}
+.titre-header :hover{
+  color: rgb(168, 42, 116);
+  box-shadow: 0 -20px 30px;
+}
 
 .header {
   background-color: black;
-  
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,9 +54,6 @@
   font-size: 50px;
 padding: 0;
 margin: 0;
-filter: brightness(0.6); 
-color: white;
- 
 }
 .nav-header{
   position: absolute;
@@ -69,12 +74,15 @@ color: white;
     display: flex;
     right: 12.5%;
     margin: 0px;
- 
+   
     
    }
 
+
+   
+
    .nav-header a { 
-  color: white; 
+  color: hwb(189 4% 4%); 
   text-decoration: none; 
 }
 

@@ -4,7 +4,6 @@ import Projet from '../views/Projet.vue'
 import Contact from '@/views/Contact.vue'
 import Propos from '@/views/Propos.vue'
 import Page404 from '@/views/Page404.vue'
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -37,7 +36,7 @@ const router = createRouter({
     name: '404',
     component: Page404,
   },
- 
+
   ],
 })
 

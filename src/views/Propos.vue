@@ -2,7 +2,7 @@
     <template>
   <div class="about">
     <div class="container">
-      <h1>À Propos de Moi</h1>
+      <h1>À Propos</h1>
       
       <section class="presentation">
         <img src="/image.cv.jpg" alt="Photo de profil" class="profile-pic">
