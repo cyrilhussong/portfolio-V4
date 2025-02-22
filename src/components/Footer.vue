@@ -13,6 +13,7 @@
         <li><router-link to="/propos">À propos</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
         <li><a href="https://github.com/cyrilhussong/" target="_blank" class="btn">GitHub</a></li>
+        <li><a href="https://linkedin.com/cyrilhussong/" target="_blank" class="btn">linkedin</a></li>
       </ul>
     </nav>
     <p>modification 2025/02/19</p>

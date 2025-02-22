@@ -107,6 +107,9 @@ export default {
 </script>
 
 <style scoped>
+.form-group label {
+  font-size: 1.5rem;
+}
 hr{
   display: flex;
   height: 0.5px;
@@ -221,6 +224,7 @@ button:hover {
 
 .form-group {
   margin-bottom: 20px;
+  font-size: ;
 }
 
 label {
@@ -239,6 +243,7 @@ input, textarea {
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: 5px;
+  
 }
 
 input:hover, textarea:hover {

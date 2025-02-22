@@ -74,6 +74,9 @@ export default {
 </script>
 
 <style scoped>
+.form-group label {
+  font-size: 1.5npmrem;
+}
 .contact {
   background-image: url('/img-form.jpg');
   background-repeat: no-repeat;

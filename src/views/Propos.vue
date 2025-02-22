@@ -38,6 +38,7 @@
 </template>
 
 <style scoped>
+
 .about {
   display: flex;
   justify-content: center;
@@ -61,6 +62,7 @@
 
 h1, h2 {
   color: #333;
+  font-size: 2rem;
 }
 
 .presentation {
@@ -68,6 +70,10 @@ h1, h2 {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  
+}
+.presentation p {
+  font-size: 2rem;
 }
 
 .profile-pic {
@@ -91,10 +97,14 @@ h1, h2 {
   margin: 5px;
   font-weight: bold;
 }
+.skills ul li {
+  font-size: 2rem;
+}
+
 
 .goals p {
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .cta-button {
