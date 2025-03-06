@@ -12,22 +12,19 @@
     
     <!-- Conteneur pour les images -->
     <div class="projets">
-      <div class="projet"> 
-        <router-link to="/projet">
-          <img src="/logo-cv.jpeg" alt="projet-img">
-          <p>CV</p>
-        </router-link>
+      <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', '/github-cv')"> 
+        <img src="/logo-cv.jpeg" alt="projet-img">
+        <p>CV</p>
       </div>
-      <div class="projet">
-        <a href="/maquette.pdf">
-          <img src="/logo-figma.png" alt="projet-img">
-          <p>Maquette</p>
-        </a>
+      <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette', '/github-maquette')">
+        <img src="/logo-figma.png" alt="projet-img">
+        <p>Maquette</p>
       </div>
     </div>
     
     <button @click="goToProjet">Découvrir</button>
-    <hr >
+    <hr>
+    
     <!-- Formulaire de contact entre le bouton et le footer -->
     <div class="contact">
       <div class="contact-container">
@@ -63,6 +60,18 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div v-if="isModalOpen" class="modal" @click.self="closeModal">
+      <div class="modal-content">
+        <span class="close-btn" @click="closeModal">&times;</span>
+        <h2>{{ modalTitle }}</h2>
+        <p><strong>Date de création:</strong> {{ modalDate }}</p>
+        <p><strong>Technologies utilisées:</strong> {{ modalTechnologies.join(', ') }}</p>
+        <!-- Lien transformé en bouton pour redirection -->
+        <button @click="goToProjet(modalLink)">Voir le projet</button>
+        <a v-if="modalGitHub" :href="modalGitHub" target="_blank" class="modal-link">Voir sur GitHub</a>
+      </div>
+    </div>
    
   </main>
 </template>
@@ -76,12 +85,20 @@ export default {
       email: '',
       message: '',
       formSubmitted: false,
-      formError: false
+      formError: false,
+      isModalOpen: false,
+      modalTitle: '',
+      modalDate: '',
+      modalTechnologies: [],
+      modalLink: '',
+      modalGitHub: ''
     };
   },
   methods: {
-    goToProjet() {
-      this.$router.push('/projet');
+    goToProjet(lien) {
+      // Redirection vers la page 'projet.vue'
+      // this.$router.push('/projet');
+      this.$router.push(lien);
     },
     handleSubmit() {
       if (this.nom && this.email && this.message) {
@@ -101,23 +118,73 @@ export default {
         this.formSubmitted = false;
         this.formError = true;
       }
+    },
+    openModal(title, date, technologies, link, github) {
+      this.modalTitle = title;
+      this.modalDate = date;
+      this.modalTechnologies = technologies;
+      this.modalLink = link;
+      this.modalGitHub = github;
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
     }
   }
 };
 </script>
 
 <style scoped>
+/* Modal Styles - Positionné en haut à droite */
+.modal {
+  position: fixed;
+  top: 20px;  /* Ajuste la position selon ton besoin */
+  right: 20px; /* Place le modal à droite */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  width: auto;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* Ajuste la largeur selon ton design */
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+/* Autres styles déjà présents */
 .form-group label {
   font-size: 1.5rem;
 }
-hr{
+
+hr {
   display: flex;
   height: 0.5px;
   width: 80%;
   background-color: white;
   margin-top: 50px;
-  
 }
+
 .paragraphe {
   font-size: 3rem;
   font-style: italic;
@@ -141,12 +208,12 @@ hr{
   background-image: url('/img-home.jpeg');
   background-size: cover;
   background-position: center;
-  height: auto;  /* Utilise une hauteur auto pour éviter les chevauchements */
+  height: auto;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Le contenu reste en haut */
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -157,9 +224,7 @@ hr{
   text-align: center;
   font-size: 2rem;
   color: rgb(52, 136, 161);
-  
 }
-
 
 .projet img {
   width: 300px;
@@ -167,15 +232,14 @@ hr{
   object-fit: cover;
   border-radius: 8px;
   border-radius: 50%;
-  
 }
+
 .projet a {
   text-decoration: none;
 }
 
 .projet p {
   color: rgb(10, 250, 250);
-  
 }
 
 button {
@@ -224,7 +288,6 @@ button:hover {
 
 .form-group {
   margin-bottom: 20px;
-  font-size: ;
 }
 
 label {
@@ -235,7 +298,8 @@ label {
   color: #333;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
@@ -243,10 +307,10 @@ input, textarea {
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: 5px;
-  
 }
 
-input:hover, textarea:hover {
+input:hover,
+textarea:hover {
   background-color: #f0f0f0;
   border-color: #111010;
 }
@@ -257,7 +321,7 @@ textarea {
 }
 
 button {
-  width: 500px;
+  width: 300px;
   padding: 14px;
   background-color: #5cb85c;
   color: white;
@@ -266,7 +330,6 @@ button {
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
 }
 
 button:hover {
@@ -291,6 +354,4 @@ button:hover {
   border-radius: 10px;
   text-align: center;
 }
-
-
 </style>

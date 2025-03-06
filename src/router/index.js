@@ -12,19 +12,26 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
-    { 
-      path: '/projet',
-      name: 'projet',
-      component: Projet, 
 
-    },
     {
       path: '/contact',
       name: 'contact',
       component: Contact,
     },
+    {
+      path: '/maquette',
+      name: "maquette",
+      beforeEnter() {
+        // window.location.href='./maquette.pdf';
+        window.open=('./top.jpeg', '_blank');
+      }
+    },
     
- 
+  {
+    path: '/projet',
+    name: 'projet',
+    component: Projet,
+  },
    
 
   { path: '/propos', 
@@ -36,6 +43,7 @@ const router = createRouter({
     name: '404',
     component: Page404,
   },
+
 
   ],
 })
