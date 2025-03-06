@@ -18,14 +18,8 @@ const router = createRouter({
       name: 'contact',
       component: Contact,
     },
-    {
-      path: '/maquette',
-      name: "maquette",
-      beforeEnter() {
-        // window.location.href='./maquette.pdf';
-        window.open=('./top.jpeg', '_blank');
-      }
-    },
+    
+    
     
   {
     path: '/projet',

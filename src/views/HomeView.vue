@@ -96,9 +96,14 @@ export default {
   },
   methods: {
     goToProjet(lien) {
-      // Redirection vers la page 'projet.vue'
-      // this.$router.push('/projet');
-      this.$router.push(lien);
+      // Si le lien est '/maquette', ouvrir le fichier PDF dans un nouvel onglet
+      if (lien === '/maquette') {
+        // Assurez-vous que le fichier PDF se trouve dans le dossier 'public' de Vue.js
+        window.open('/maquette.pdf', '_blank'); // Modifiez le chemin en fonction de l'emplacement du fichier PDF
+      } else {
+        // Si ce n'est pas la maquette, rediriger vers une autre page
+        this.$router.push(lien);
+      }
     },
     handleSubmit() {
       if (this.nom && this.email && this.message) {
