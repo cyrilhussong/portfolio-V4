@@ -12,17 +12,24 @@
     
     <!-- Conteneur pour les images -->
     <div class="projets">
-      <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', '/github-cv')"> 
-        <img src="/logo-cv.jpeg" alt="projet-img">
+      <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')"> 
+        <img src="/cv-logo.jpeg" alt="projet-img">
         <p>CV</p>
       </div>
+      
       <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette', '/github-maquette')">
         <img src="/logo-figma.png" alt="projet-img">
         <p>Maquette</p>
       </div>
+
+      <div class="projet" @click="openModal('Formulaire de contact', '15/02/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')">
+        <img src="/img-formulaire.png" alt="projet-img">
+        <p>Maquette</p>
+      </div>
+      
     </div>
     
-    <button @click="goToProjet">Découvrir</button>
+    <router-link to="/projet">Projet<button >Découvrir</button></router-link>
     <hr>
     
     <!-- Formulaire de contact entre le bouton et le footer -->
@@ -229,14 +236,20 @@ hr {
   text-align: center;
   font-size: 2rem;
   color: rgb(52, 136, 161);
+  
 }
 
 .projet img {
   width: 300px;
   height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
+ 
+  
   border-radius: 50%;
+  
+
+}
+.projet:hover img {
+  box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.5); /* Ombre en bas à droite */
 }
 
 .projet a {

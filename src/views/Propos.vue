@@ -32,7 +32,7 @@
         </p>
       </section>
 
-      <router-link to="/projet" class="cta-button">Voir mes projets 🚀</router-link>
+      <router-link to="/" class="cta-button">Voir mes projets 🚀</router-link>
     </div>
   </div>
 </template>

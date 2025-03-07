@@ -18,7 +18,11 @@
     </nav>
     <p>modification 2025/02/19</p>
     <div class="cta">
-      <a href="./Maquettes-Figma.pdf" class="btn" target="_blank">📄 Mon CV</a>
+      <router-link :to="{ path: '/projet' }" class="btn" target="_blank">📄 Mon CV</router-link>
+
+
+
+
     </div>
   </header>
 </template>

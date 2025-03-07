@@ -7,7 +7,7 @@
         <header>
           <div class="photo">
             
-              <img class="moi" src="C:\Users\cyril\Documents\portfolio-v3\public\logo-cv.jpeg" alt="photo/profil" />
+              <img class="moi" src="/image.cv.jpg" alt="photo/profil" />
             
           </div>
   
@@ -118,8 +118,8 @@
   
         <footer>
           <div class="social-links">
-            <a href="https://github.com" target="_blank" style="color: red;">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" style="color: red;">LinkedIn</a>
+            <a href="https://github.com/cyrilhussong/portfolio-V4" target="_blank" style="color: red;">GitHub</a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" style="color: red;">LinkedIn</a>
           </div>
           <p>Dernière mise à jour : 09/02/2025</p>
         </footer>

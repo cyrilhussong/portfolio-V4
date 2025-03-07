@@ -4,7 +4,8 @@
         <h1>Oops! Page non trouvée</h1>
         <h2>Erreur 404</h2>
         <p>La page que vous cherchez n'existe pas ou a été déplacée.</p>
-        <a href="./HomeView.vue" class="home-link">Retour à l'accueil</a>
+        <router-link to="/" class="home-link">Retour à l'accueil</router-link>
+
       </div>
     </div>
   </template>
