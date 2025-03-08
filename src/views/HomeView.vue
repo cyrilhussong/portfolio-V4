@@ -14,7 +14,7 @@
     <div class="projets">
       <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')"> 
         <img src="/cv-logo.jpeg" alt="projet-img">
-        <p>CV</p>
+        <p>Mon CV</p>
       </div>
       
       <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette', '/github-maquette')">
@@ -22,9 +22,9 @@
         <p>Maquette</p>
       </div>
 
-      <div class="projet" @click="openModal('Formulaire de contact', '15/02/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')">
+      <div class="projet" @click="openModal('Formulaire de contact', '15/02/2025', ['Vue.js', 'CSS', 'HTML'], '/contact', 'https://github.com/cyrilhussong/portfolio-V4')">
         <img src="/img-formulaire.png" alt="projet-img">
-        <p>Maquette</p>
+        <p>Formulaire-contact</p>
       </div>
       
     </div>
@@ -151,22 +151,23 @@ export default {
 .modal {
   position: fixed;
   top: 20px;  /* Ajuste la position selon ton besoin */
-  right: 20px; /* Place le modal à droite */
+  
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   width: auto;
+  
 }
 
 .modal-content {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 10px;
-  width: 300px; /* Ajuste la largeur selon ton design */
   text-align: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  width: 900px;
 }
 
 .close-btn {
@@ -236,7 +237,7 @@ hr {
   text-align: center;
   font-size: 2rem;
   color: rgb(52, 136, 161);
-  
+
 }
 
 .projet img {

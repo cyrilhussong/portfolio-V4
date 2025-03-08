@@ -26,6 +26,9 @@
     box-shadow: 0 -20px 30px;
 }
 
+
+
+
 .header {
     background-color: black;
     background-size: cover;
@@ -43,6 +46,8 @@
 .nav-header {
     display: flex;
     gap: 20px; 
+    color: rgb(168, 42, 116);  /* Changer la couleur pour bien voir */
+    text-decoration: underline;
 }
 
 .nav-header :hover {

@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   data() {
     return {
@@ -52,12 +54,23 @@ export default {
         this.formSubmitted = true;
         this.formError = false;
 
-        // Simuler l'envoi de message (ici, tu pourrais envoyer les données à un backend)
-        console.log('Message envoyé:', {
-          nom: this.nom,
-          email: this.email,
-          message: this.message
-        });
+        // Paramètres à envoyer
+        const templateParams = {
+          from_nom: this.nom,
+          from_email: this.email,
+          from_message: this.message,
+          to_email: 'cyrilhussong347@gmail.com'  // Ajout de l'email de destination ici
+        };
+
+        // Envoi du message via EmailJS
+        emailjs.send('cyril', 'template_id', templateParams, 'Pf4uUW3lZCxp3B9I-')  // Remplace 'service_id', 'template_id' et 'user_id' par les valeurs correctes.
+          .then((response) => {
+            console.log('Message envoyé avec succès', response);
+          })
+          .catch((error) => {
+            console.error('Erreur d\'envoi de message', error);
+            this.formError = true;
+          });
 
         // Réinitialisation du formulaire
         this.nom = '';
@@ -75,7 +88,7 @@ export default {
 
 <style scoped>
 .form-group label {
-  font-size: 1.5npmrem;
+  font-size: 1.5rem;
 }
 .contact {
   background-image: url('/img-form.jpg');
@@ -116,7 +129,6 @@ h1 {
   color: #333;
   font-weight: bold;
 }
- 
 
 .form-group {
   margin-bottom: 20px;
