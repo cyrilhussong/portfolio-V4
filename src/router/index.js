@@ -32,6 +32,7 @@ const router = createRouter({
     name: 'propos', 
     component: Propos,
   },
+  
   {
     path: '/:pathMatch(.*)*',  
     name: '404',

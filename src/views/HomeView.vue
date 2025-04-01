@@ -17,7 +17,7 @@
         <p>Mon CV</p>
       </div>
       
-      <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette', '/github-maquette')">
+      <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette', 'https://github.com/cyrilhussong/portfolio-V4/blob/main/public/maquette.pdf')">
         <img src="/logo-figma.png" alt="projet-img">
         <p>Maquette</p>
       </div>
@@ -29,7 +29,7 @@
       
     </div>
     
-    <router-link to="/projet">Projet<button >Découvrir</button></router-link>
+    <!--<router-link to="/projet">Projet<button >Découvrir</button></router-link>-->
     <hr>
     
     <!-- Formulaire de contact entre le bouton et le footer -->

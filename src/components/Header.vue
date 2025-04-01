@@ -6,7 +6,7 @@
     <header class="header">
         <nav class="nav-header">
             <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/projet">Projet</RouterLink>
+            <!-- <RouterLink to="/projet">Projet</RouterLink> -->
             <RouterLink to="/contact">Contact</RouterLink>
             <router-link to="/propos">À Propos</router-link>
         </nav>

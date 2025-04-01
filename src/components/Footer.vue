@@ -9,7 +9,7 @@
     <nav>
       <ul>
         <li><router-link to="/">Accueil</router-link></li>
-        <li><router-link to="/projet">Projet</router-link></li>
+        <!-- <li><router-link to="/projet">Projet</router-link></li> -->
         <li><router-link to="/propos">À propos</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
         <li><a href="https://github.com/cyrilhussong/" target="_blank" class="btn">GitHub</a></li>
