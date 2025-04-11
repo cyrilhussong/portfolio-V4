@@ -166,7 +166,7 @@
   }
   
   .divcv {
-    background-image: url("@/assets/imgdev.jpg");
+    background-image: url("/imgdev.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
