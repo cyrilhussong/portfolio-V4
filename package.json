@@ -5,13 +5,13 @@
   "type": "module",
   "homepage": "https://cyrilhussong.github.io/portfolio-V4",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-},
-
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "full-deploy": "npm run build && gh-pages -d dist && git add . && git commit -m 'build: full deploy' && git push"
+  },
   "dependencies": {
     "emailjs-com": "^3.2.0",
     "vue": "^3.5.13",
