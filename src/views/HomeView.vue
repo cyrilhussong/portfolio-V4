@@ -373,4 +373,64 @@ button:hover {
   border-radius: 10px;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .h1 {
+    font-size: 28px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .paragraphe {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  .projets {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.3rem;
+  }
+
+  .projet img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .contact-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .modal-link {
+    font-size: 1rem;
+  }
+}
+
 </style>

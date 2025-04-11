@@ -96,4 +96,43 @@ nav a:hover {
 .btn:hover {
   background-color: #e67e22;
 }
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .topscroll {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  p {
+    position: static;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .cta {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 </style>

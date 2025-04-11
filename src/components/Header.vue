@@ -30,59 +30,56 @@
 
 
 .header {
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 50px;
-    padding: 0 20px;
-    margin: 0;
+  background-color: black;
+  text-align: center;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-header {
-    display: flex;
-    gap: 20px; 
-    color: rgb(168, 42, 116);  /* Changer la couleur pour bien voir */
-    text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.nav-header :hover {
-    color: rgb(168, 42, 116);
-    box-shadow: 0 -20px 30px;
+.nav-header a {
+  color: #00dfff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-header a:hover {
+  text-decoration: underline;
 }
 
 .titre-header {
-    display: flex;
+  margin-top: 20px;
 }
 
-.nav-header a { 
-    color: hwb(189 4% 4%); 
-    text-decoration: none; 
+.titre-header a {
+  color: #00dfff;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
 }
 
-/* Responsive design */
+.titre-header a:hover {
+  color: rgb(168, 42, 116);
+}
+
+/* Responsive (déjà bien fait, juste au cas où) */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        height: auto;
-        font-size: 24px;
-        padding: 20px 0;
-    }
+  .nav-header a {
+    font-size: 20px;
+  }
 
-    .nav-header {
-        flex-direction: column;
-        align-items: center;
-        font-size: 24px;
-        gap: 10px;
-    }
-
-    .titre-header {
-        margin-top: 10px;
-        font-size: 28px;
-    }
+  .titre-header a {
+    font-size: 26px;
+  }
 }
+
+
 </style>
