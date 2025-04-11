@@ -1,85 +1,60 @@
-<script>
-
+<script setup>
+// Pas de script nécessaire ici pour l'instant
 </script>
 
 <template>
-    <header class="header">
-        <nav class="nav-header">
-            <RouterLink to="/">Home</RouterLink>
-            <!-- <RouterLink to="/projet">Projet</RouterLink> -->
-            <RouterLink to="/contact">Contact</RouterLink>
-            <router-link to="/propos">À Propos</router-link>
-        </nav>
-        <nav class="titre-header">
-            <h1><RouterLink to="/">Cyril Hussong</RouterLink></h1>
-        </nav>
-    </header>
+  <header class="header">
+    <nav class="nav-header">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
+      <RouterLink to="/propos">À Propos</RouterLink>
+    </nav>
+    <div class="titre-header">
+      <h1><RouterLink to="/">Cyril Hussong</RouterLink></h1>
+    </div>
+  </header>
 </template>
 
 <style scoped>
-.titre-header a {
-    text-decoration: none; 
-    color: hwb(189 4% 4%);
-}
-.titre-header :hover {
-    color: rgb(168, 42, 116);
-    box-shadow: 0 -20px 30px;
-}
-
-
-
-
 .header {
   background-color: black;
-  text-align: center;
-  padding: 40px 0;
+  border-bottom: 2px solid indigo;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 40px;
+  font-family: Georgia, serif;
 }
 
 .nav-header {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }
 
 .nav-header a {
-  color: #00dfff;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
+  color: #00e5ff;
+  font-size: 24px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .nav-header a:hover {
-  text-decoration: underline;
+  color: #ff00e5;
 }
 
-.titre-header {
-  margin-top: 20px;
+.titre-header h1 {
+  margin: 0;
 }
 
 .titre-header a {
-  color: #00dfff;
-  text-decoration: none;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
+  color: #00e5ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .titre-header a:hover {
   color: rgb(168, 42, 116);
 }
-
-/* Responsive (déjà bien fait, juste au cas où) */
-@media (max-width: 768px) {
-  .nav-header a {
-    font-size: 20px;
-  }
-
-  .titre-header a {
-    font-size: 26px;
-  }
-}
-
-
 </style>

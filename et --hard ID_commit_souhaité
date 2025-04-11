@@ -1,0 +1,101 @@
+[33mcommit ba9aaac4558f864ee05c7036398f0aa5e7ceda99[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 16:20:19 2025 +0200
+
+    Mise à jour responsive mobile + amélioration design
+
+[33mcommit 0e4ee6dfec1fd07872d070ceedf0d22d213a6777[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 16:17:03 2025 +0200
+
+    Ajout du responsive mobile + amélioration design
+
+[33mcommit 9f94233214251b7b04e2dac31d0a3c6eb651a691[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 15:13:07 2025 +0200
+
+    fix: base path + configuration Vite pour GitHub Pages
+
+[33mcommit 598e9bd2d662d8946ddb2e610fa899320e01a03a[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 14:31:02 2025 +0200
+
+    config: déploiement GitHub Pages ajouté
+
+[33mcommit e391a27988e1bbee0a9a197dc9c971c2a61f83e3[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 13:21:41 2025 +0200
+
+    premier commit
+
+[33mcommit 2ef78531825ef6a9f312c96f9675e1eb2f0deab9[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 01:53:55 2025 +0200
+
+    Ton message de commit
+
+[33mcommit 3218a177fe0bc0dd24dd4db98ace64b8c92b54cd[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Apr 11 01:23:56 2025 +0200
+
+    fix: ajout base pour GitHub Pages
+
+[33mcommit 920606c5688184bc5a01e2ffe2098b438870a27e[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Tue Apr 1 18:11:46 2025 +0200
+
+    Votre message de commit
+
+[33mcommit fd8779334953b0a909ffec7fba20d2515a057056[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Sat Mar 8 13:34:45 2025 +0100
+
+    Description des modifications apportées
+
+[33mcommit dfdd58b9387347fba306e5f7637b39a7fd67e0be[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Fri Mar 7 14:50:39 2025 +0100
+
+    Premier commit de mon code
+
+[33mcommit 47ed4fa76110ca71753e37bf7f27dea06945f147[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Thu Mar 6 21:08:29 2025 +0100
+
+    Modification du bouton pour ouvrir le fichier PDF
+
+[33mcommit 282d9199bbcbc3f5ca6bd2fc933b6a7ad7c987ea[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Thu Mar 6 19:05:16 2025 +0100
+
+    Modif maodale
+
+[33mcommit 3511886fd2f5625f7202730af6eb68284889b7f9[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Sat Feb 22 19:10:39 2025 +0100
+
+    Mise à jour : description des modifications
+
+[33mcommit 2447b48596210a14bbe71655157ea48881379805[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Wed Feb 19 13:20:31 2025 +0100
+
+    modification
+
+[33mcommit a3ff79b258eb6957c4b53edc8d186b710a23c911[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Mon Feb 17 18:35:04 2025 +0100
+
+    Ajout CV téléchargeable
+
+[33mcommit 1b44d332bf78fabc42b90b3b81d81069b4fc28b0[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Mon Feb 17 18:13:37 2025 +0100
+
+    Modification de la page 404
+
+[33mcommit 8019d4c344a07c4ef1f3654319449c6482282702[m
+Author: cyrilhussong <cyrilhussong347@gmail.com>
+Date:   Mon Feb 17 18:09:40 2025 +0100
+
+    First commit
