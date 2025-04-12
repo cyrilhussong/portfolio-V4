@@ -13,26 +13,25 @@
     <!-- Conteneur pour les images -->
     <div class="projets">
       <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')"> 
-        <img src="/cv-logo.jpeg" alt="projet-img">
+        <img :src="`${baseUrl}cv-logo.jpeg`" alt="projet-img">
         <p>Mon CV</p>
       </div>
       
-      <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette', 'https://github.com/cyrilhussong/portfolio-V4/blob/main/public/maquette.pdf')">
-        <img src="/logo-figma.png" alt="projet-img">
+      <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette.pdf', 'https://github.com/cyrilhussong/portfolio-V4/blob/main/public/maquette.pdf')">
+        <img :src="`${baseUrl}logo-figma.png`" alt="projet-img">
         <p>Maquette</p>
       </div>
 
       <div class="projet" @click="openModal('Formulaire de contact', '15/02/2025', ['Vue.js', 'CSS', 'HTML'], '/contact', 'https://github.com/cyrilhussong/portfolio-V4')">
-        <img src="/img-formulaire.png" alt="projet-img">
+        <img :src="`${baseUrl}img-formulaire.png`" alt="projet-img">
         <p>Formulaire-contact</p>
       </div>
       
     </div>
     
-    <!--<router-link to="/projet">Projet<button >Découvrir</button></router-link>-->
     <hr>
     
-    <!-- Formulaire de contact entre le bouton et le footer -->
+    <!-- Formulaire de contact -->
     <div class="contact">
       <div class="contact-container">
         <h1>Contactez-Moi</h1>
@@ -55,12 +54,10 @@
           <button type="submit">Envoyer</button>
         </form>
 
-        <!-- Message de succès -->
         <div v-if="formSubmitted" class="success-message">
           <p>Merci, {{ nom }} ! Votre message a été envoyé.</p>
         </div>
 
-        <!-- Message d'erreur -->
         <div v-if="formError" class="error-message">
           <p style="color: red;">Veuillez remplir tous les champs.</p>
         </div>
@@ -74,12 +71,10 @@
         <h2>{{ modalTitle }}</h2>
         <p><strong>Date de création:</strong> {{ modalDate }}</p>
         <p><strong>Technologies utilisées:</strong> {{ modalTechnologies.join(', ') }}</p>
-        <!-- Lien transformé en bouton pour redirection -->
         <button @click="goToProjet(modalLink)">Voir le projet</button>
         <a v-if="modalGitHub" :href="modalGitHub" target="_blank" class="modal-link">Voir sur GitHub</a>
       </div>
     </div>
-   
   </main>
 </template>
 
@@ -88,6 +83,7 @@ export default {
   name: "HomePage",
   data() {
     return {
+      baseUrl: import.meta.env.BASE_URL,
       nom: '',
       email: '',
       message: '',
@@ -103,12 +99,11 @@ export default {
   },
   methods: {
     goToProjet(lien) {
-      // Si le lien est '/maquette', ouvrir le fichier PDF dans un nouvel onglet
-      if (lien === '/maquette') {
-        // Assurez-vous que le fichier PDF se trouve dans le dossier 'public' de Vue.js
-        window.open('/maquette.pdf', '_blank'); // Modifiez le chemin en fonction de l'emplacement du fichier PDF
+      const isPdf = lien.endsWith('.pdf');
+      if (isPdf) {
+        const path = `${import.meta.env.BASE_URL}${lien.replace(/^\//, '')}`;
+        window.open(path, '_blank');
       } else {
-        // Si ce n'est pas la maquette, rediriger vers une autre page
         this.$router.push(lien);
       }
     },
@@ -116,13 +111,6 @@ export default {
       if (this.nom && this.email && this.message) {
         this.formSubmitted = true;
         this.formError = false;
-        console.log('Message envoyé:', {
-          nom: this.nom,
-          email: this.email,
-          message: this.message
-        });
-
-        // Réinitialiser les champs après l'envoi
         this.nom = '';
         this.email = '';
         this.message = '';
@@ -147,18 +135,17 @@ export default {
 </script>
 
 <style scoped>
-/* Modal Styles - Positionné en haut à droite */
+/* (Style CSS inchangé, voir le bloc complet précédent que tu avais) */
+
 .modal {
   position: fixed;
-  top: 20px;  /* Ajuste la position selon ton besoin */
-  
+  top: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   width: auto;
-  
 }
 
 .modal-content {
@@ -168,6 +155,7 @@ export default {
   text-align: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   width: 900px;
+  position: relative;
 }
 
 .close-btn {
@@ -183,11 +171,6 @@ export default {
   margin-top: 20px;
   font-size: 1.2rem;
   color: #007bff;
-}
-
-/* Autres styles déjà présents */
-.form-group label {
-  font-size: 1.5rem;
 }
 
 hr {
@@ -237,24 +220,16 @@ hr {
   text-align: center;
   font-size: 2rem;
   color: rgb(52, 136, 161);
-
 }
 
 .projet img {
   width: 300px;
   height: 300px;
- 
-  
   border-radius: 50%;
-  
-
 }
+
 .projet:hover img {
-  box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.5); /* Ombre en bas à droite */
-}
-
-.projet a {
-  text-decoration: none;
+  box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.5);
 }
 
 .projet p {
@@ -279,7 +254,6 @@ button:hover {
   background-color: #971d68;
 }
 
-/* Formulaire de contact */
 .contact {
   margin-top: 40px;
   width: 100%;
@@ -339,23 +313,6 @@ textarea {
   height: 150px;
 }
 
-button {
-  width: 300px;
-  padding: 14px;
-  background-color: #5cb85c;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #4cae4c;
-}
-
-/* Message de succès */
 .success-message {
   margin-top: 20px;
   color: green;
@@ -363,7 +320,6 @@ button:hover {
   text-align: center;
 }
 
-/* Message d'erreur */
 .error-message {
   margin-top: 20px;
   color: white;
@@ -373,17 +329,15 @@ button:hover {
   border-radius: 10px;
   text-align: center;
 }
+
 @media screen and (max-width: 768px) {
   .home {
     padding: 10px;
-    background-size: cover;
-    background-position: center;
   }
 
   .h1 {
     font-size: 28px;
     text-align: center;
-    padding: 10px;
   }
 
   .paragraphe {
@@ -432,5 +386,4 @@ button:hover {
     font-size: 1rem;
   }
 }
-
 </style>

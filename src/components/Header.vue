@@ -57,4 +57,28 @@
 .titre-header a:hover {
   color: rgb(168, 42, 116);
 }
+
+
+
+/* 🔥 Ajout responsive mobile */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-header {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  .titre-header h1 {
+    font-size: 24px;
+  }
+}
+
 </style>

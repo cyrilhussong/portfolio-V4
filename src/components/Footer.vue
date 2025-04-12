@@ -91,6 +91,7 @@ nav a:hover {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  
 }
 
 .btn:hover {
@@ -110,6 +111,10 @@ nav a:hover {
     padding: 0;
     margin: 20px 0;
   }
+  nav ul li {
+  margin-bottom: 10px;
+}
+
 
   .topscroll {
     width: 60px;
@@ -119,6 +124,7 @@ nav a:hover {
   .btn {
     width: 100%;
     max-width: 200px;
+    
   }
 
   p {
