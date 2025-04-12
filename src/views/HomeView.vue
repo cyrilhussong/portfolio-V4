@@ -5,33 +5,32 @@
     </div>
 
     <div class="paragraphe">
-      <p>Bonjour ! Je suis Cyril Hussong, un développeur web junior passionné par la création d’expériences interactives et modernes. 
-        Après une carrière dans la boucherie, j'ai décidé de me reconvertir dans le développement web. 
-        J'aime apprendre, résoudre des problèmes et concevoir des interfaces élégantes et fonctionnelles.</p>
+      <p>Bonjour ! Je suis Cyril Hussong, un développeur web junior passionné par la création d’expériences interactives et modernes.
+        Après une carrière dans la boucherie, j'ai décidé de me reconvertir dans le développement web.
+        J'aime apprendre, résoudre des problèmes et concevoir des interfaces élégantes et fonctionnelles.
+      </p>
     </div>
-    
-    <!-- Conteneur pour les images -->
+
     <div class="projets">
-      <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')"> 
-        <img :src="`${baseUrl}cv-logo.jpeg`" alt="projet-img">
+      <div class="projet" @click="openModal('CV', '01/01/2025', ['Vue.js', 'CSS', 'HTML'], '/projet', 'https://github.com/cyrilhussong/portfolio-V4')">
+        <img :src="`${baseUrl}cv-logo.jpeg`" alt="projet-img" />
         <p>Mon CV</p>
       </div>
-      
+
       <div class="projet" @click="openModal('Maquette', '15/02/2025', ['Figma'], '/maquette.pdf', 'https://github.com/cyrilhussong/portfolio-V4/blob/main/public/maquette.pdf')">
-        <img :src="`${baseUrl}logo-figma.png`" alt="projet-img">
+        <img :src="`${baseUrl}logo-figma.png`" alt="projet-img" />
         <p>Maquette</p>
       </div>
 
       <div class="projet" @click="openModal('Formulaire de contact', '15/02/2025', ['Vue.js', 'CSS', 'HTML'], '/contact', 'https://github.com/cyrilhussong/portfolio-V4')">
-        <img :src="`${baseUrl}img-formulaire.png`" alt="projet-img">
+        <img :src="`${baseUrl}img-formulaire.png`" alt="projet-img" />
         <p>Formulaire-contact</p>
       </div>
-      
     </div>
-    
-    <hr>
-    
-    <!-- Formulaire de contact -->
+
+    <hr />
+
+    <!-- Formulaire -->
     <div class="contact">
       <div class="contact-container">
         <h1>Contactez-Moi</h1>
@@ -40,14 +39,14 @@
             <label for="nom">Nom:👤</label>
             <input type="text" v-model="nom" id="nom" required />
           </div>
-          
+
           <div class="form-group">
             <label for="email">Email: 📧</label>
             <input type="email" v-model="email" id="email" required />
           </div>
 
           <div class="form-group">
-            <label for="message">Message:💬 </label>
+            <label for="message">Message:💬</label>
             <textarea v-model="message" id="message" rows="4" required></textarea>
           </div>
 
@@ -100,12 +99,8 @@ export default {
   methods: {
     goToProjet(lien) {
       const isPdf = lien.endsWith('.pdf');
-      if (isPdf) {
-        const path = `${import.meta.env.BASE_URL}${lien.replace(/^\//, '')}`;
-        window.open(path, '_blank');
-      } else {
-        this.$router.push(lien);
-      }
+      const path = `${import.meta.env.BASE_URL}${lien.replace(/^\//, '')}`;
+      isPdf ? window.open(path, '_blank') : this.$router.push(lien);
     },
     handleSubmit() {
       if (this.nom && this.email && this.message) {
@@ -135,50 +130,21 @@ export default {
 </script>
 
 <style scoped>
-/* (Style CSS inchangé, voir le bloc complet précédent que tu avais) */
-
-.modal {
-  position: fixed;
-  top: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+.home {
+  background-image: url('/img-home.jpeg');
+  background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  z-index: 1000;
-  width: auto;
 }
 
-.modal-content {
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  border-radius: 10px;
+.h1 {
   text-align: center;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  width: 900px;
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.modal-link {
-  display: block;
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #007bff;
-}
-
-hr {
-  display: flex;
-  height: 0.5px;
-  width: 80%;
-  background-color: white;
-  margin-top: 50px;
+  font-size: 50px;
+  color: rgb(173, 36, 214);
+  font-style: italic;
+  margin-top: 30px;
 }
 
 .paragraphe {
@@ -186,31 +152,7 @@ hr {
   font-style: italic;
   color: rgb(12, 241, 241);
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.h1 {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-size: 50px;
-  color: rgb(173, 36, 214);
-  font-style: italic;
-}
-
-.home {
-  background-image: url('/img-home.jpeg');
-  background-size: cover;
-  background-position: center;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  margin: 30px 10px;
 }
 
 .projets {
@@ -220,6 +162,7 @@ hr {
   text-align: center;
   font-size: 2rem;
   color: rgb(52, 136, 161);
+  flex-wrap: wrap;
 }
 
 .projet img {
@@ -236,30 +179,17 @@ hr {
   color: rgb(10, 250, 250);
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 250px;
-  height: 50px;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #971d68;
+hr {
+  width: 80%;
+  height: 0.5px;
+  background-color: white;
+  margin: 50px auto;
 }
 
 .contact {
-  margin-top: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
-  text-align: center;
 }
 
 .contact-container {
@@ -269,12 +199,12 @@ button:hover {
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
 }
 
 .contact-container h1 {
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
   margin-bottom: 30px;
   color: #333;
 }
@@ -285,7 +215,6 @@ button:hover {
 
 label {
   display: block;
-  margin-bottom: 8px;
   font-weight: bold;
   font-size: 1.1rem;
   color: #333;
@@ -298,7 +227,6 @@ textarea {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-sizing: border-box;
   margin-top: 5px;
 }
 
@@ -313,43 +241,86 @@ textarea {
   height: 150px;
 }
 
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #971d68;
+}
+
 .success-message {
   margin-top: 20px;
   color: green;
   font-size: 1.2rem;
-  text-align: center;
 }
 
 .error-message {
   margin-top: 20px;
-  color: white;
-  font-size: 1.2rem;
   background-color: #e74c3c;
+  color: white;
   padding: 15px;
   border-radius: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #007bff;
 }
 
 @media screen and (max-width: 768px) {
-  .home {
-    padding: 10px;
-  }
-
   .h1 {
     font-size: 28px;
-    text-align: center;
   }
 
   .paragraphe {
     font-size: 1.3rem;
-    padding: 10px;
   }
 
   .projets {
     flex-direction: column;
-    align-items: center;
     gap: 20px;
-    font-size: 1.3rem;
   }
 
   .projet img {
@@ -358,27 +329,11 @@ textarea {
   }
 
   .modal-content {
-    width: 90%;
-    padding: 15px;
-    font-size: 1rem;
-  }
-
-  .contact-container {
     width: 95%;
-    padding: 20px;
-  }
-
-  input,
-  textarea {
-    font-size: 1rem;
+    padding: 15px;
   }
 
   button {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .form-group label {
     font-size: 1rem;
   }
 
